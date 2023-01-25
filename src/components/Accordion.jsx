@@ -17,9 +17,17 @@ export default function Accordion(props) {
 
   const handleStyleTitleOpened = () => {
     if (isActive) {
-      return <div className="font-bold">{props.title}</div>;
+      return (
+        <div className="font-bold text-c-veryDarkDesaturatedBlue">
+          {props.title}
+        </div>
+      );
     }
-    return <div>{props.title}</div>;
+    return (
+      <div className=" text-c-veryDarkDesaturatedBlue hover:text-c-softRed hover:cursor-pointer">
+        {props.title}
+      </div>
+    );
   };
 
   return (
@@ -27,7 +35,7 @@ export default function Accordion(props) {
       <div className="accordion">
         <div className="acccordion-item">
           <div
-            className="accordion-title flex flex-row justify-between mt-4"
+            className="accordion-title flex flex-row justify-between mt-6"
             onClick={handleClick}
           >
             {handleStyleTitleOpened()}
